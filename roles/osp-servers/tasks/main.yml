@@ -13,7 +13,7 @@
     security_groups:  "{{ __openstack_server.security_group }}"
     delete_fip:       "{{__openstack_server.delete_fip              | default(true) }}"
 #    meta: "group={{ __openstack_server.meta.group }},deployment_name={{ __openstack_server.meta.deployment_name }}"
-    meta: 'group="{{ __openstack_server.meta.group }}",deployment_name="{{ __openstack_server.meta.deployment_name }}"'
+    meta: 'group="{{ __openstack_server.meta.["group"] }}",deployment_name="{{ __openstack_server.meta.["deployment_name"] }}"'
     nics:
       - net-name: int_network
       #    - net-name: ext_network
