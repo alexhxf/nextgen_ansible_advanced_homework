@@ -60,6 +60,16 @@
         loop_var: __instance
       register: r_floating_ips
 
+    - name: start a compute instance
+      os_server_action:
+        action: start
+        project_name: "{{ project_name }}"
+        server: "{{__instance.__openstack_server.name}}"
+        timeout: 200
+      loop: "{{ r_instances.results }}"
+      loop_control:
+        loop_var: __instance
+
     - name: Wait for servers by name to be available
       wait_for:
         host: "{{ __fip.floating_ip.floating_ip_address }}"
