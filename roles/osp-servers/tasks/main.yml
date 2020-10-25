@@ -63,7 +63,7 @@
     - name: start a compute instance
       os_server_action:
         action: start
-        project_name: "{{ project_name }}"
+#        project_name: "{{ project_name }}"
         server: "{{__instance.__openstack_server.name}}"
         timeout: 200
       loop: "{{ r_instances.results }}"
