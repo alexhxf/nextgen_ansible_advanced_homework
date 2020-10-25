@@ -37,6 +37,7 @@
 - name: Debug instances 
   debug:
     msg: "Server is {{ __instance.__openstack_server.name }}"
+    msg: "{{ __instance }}"
     verbosity: 2
   loop: "{{ r_instances.results }}"
   loop_control:
