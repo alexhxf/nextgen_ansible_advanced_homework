@@ -61,8 +61,8 @@
       register: r_floating_ips
 
     - name: start a compute instance
-      cloud: opentack
       os_server_action:
+        cloud: opentack
         action: start
 #        project_name: "{{ project_name }}"
         server: "{{__instance.__openstack_server.name}}"
