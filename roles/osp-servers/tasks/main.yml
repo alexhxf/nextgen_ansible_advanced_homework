@@ -62,7 +62,7 @@
 
     - name: start a compute instance
       os_server_action:
-        cloud: opentack
+        cloud: openstack
         action: start
 #        project_name: "{{ project_name }}"
         server: "{{__instance.__openstack_server.name}}"
