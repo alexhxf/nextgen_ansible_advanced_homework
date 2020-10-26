@@ -114,12 +114,12 @@
     - apps
     - tomcat
 
-- name: generate index.html
-  template:
-    src: index.html.j2
-    dest: /var/www/html/index.html
-    mode: '0755'
-
-  tags:
-    - apps
-    - tomcat
+#- name: generate index.html
+#  template:
+#    src: index.html.j2
+#    dest: /var/www/html/index.html
+#    mode: '0755'
+#
+#  tags:
+#    - apps
+#    - tomcat
