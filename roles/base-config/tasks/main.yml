@@ -1,14 +1,31 @@
 ---
 # Initial, common, system setup steps
 
-- name: enable sudo without tty for some ansible commands
-  replace:
-    path: /etc/sudoers
-    regexp: '^Defaults\s*requiretty'
-    replace: 'Defaults  !requiretty'
-    backup: yes
+- name: base-config
+  block:
 
-- name: enable repos
+    - name: enable sudo without tty for some ansible commands
+      replace:
+        path: /etc/sudoers
+        regexp: '^Defaults\s*requiretty'
+        replace: 'Defaults  !requiretty'
+        backup: yes
+
+    - name: Setup Repos
+      copy:
+        src: open_three-tier-app.repo
+        dest: /etc/yum.repos.d/open_three-tier-app.repo
+
+  tags:
+    - base-config
  
-- name: install base tools and packages
-
+#- name: install base tools and packages
+#  package:
+#    name: "{{ __package }}"
+#    state: present
+#  loop:
+#    - "{{ postgres_rhel7_repo }}"
+#    - "{{ app_yum_packages }}"
+#    - "{{ postgres_library }}"
+#  loop_control:
+#    loop_var: __package
