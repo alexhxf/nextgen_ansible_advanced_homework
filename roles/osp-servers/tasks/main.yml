@@ -12,7 +12,7 @@
     wait:             "{{ __openstack_server.wait                   | default('yes') }}"
     security_groups:  "{{ __openstack_server.security_group }}"
     delete_fip:       "{{__openstack_server.delete_fip              | default(true) }}"
-    meta: "group={{ __openstack_server.meta_group }},deployment_name={{ __openstack_server.meta_deployment_name }}"
+    meta: "group={{ __openstack_server.meta_group }},deployment_name={{ __openstack_server.meta_deployment_name }},group_p={{ __openstack_server.meta_group_private }}"
     nics:
       - net-name: int_network
       #    - net-name: ext_network

@@ -15,6 +15,7 @@ osp_servers:
     security_group: frontend
     meta_group: frontends
     meta_deployment_name: QA
+    meta_group_private: frontends_p
 #    meta:
 #      - { group: frontends, deployment_name: QA}
 #  app1:
@@ -26,6 +27,7 @@ osp_servers:
     security_group: apps
     meta_group: apps
     meta_deployment_name: QA
+    meta_group_private: apps_p
 #    meta:
 #      - { group: apps, deployment_name: QA}
 #  app2:
@@ -37,6 +39,7 @@ osp_servers:
     security_group: apps
     meta_group: apps
     meta_deployment_name: QA
+    meta_group_private: apps_p
 #    meta:
 #      - { group: apps, deployment_name: QA}
 #  db:
@@ -48,5 +51,6 @@ osp_servers:
     security_group: db
     meta_group: appdbs
     meta_deployment_name: QA
+    meta_group_private: appdbs_p
 #    meta:
 #      - { group: appdbs, deployment_name: QA}
