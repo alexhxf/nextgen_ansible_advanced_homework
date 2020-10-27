@@ -14,4 +14,5 @@
   - name: Fail if 'Ansible has done its job' is not in the page content
 #    - role: osp-instance-delete
     fail:
+    include: site-osp-delete.yml 
     when: "'Ansible has done its job' not in webpage.content"
