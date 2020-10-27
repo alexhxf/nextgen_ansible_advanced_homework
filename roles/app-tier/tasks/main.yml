@@ -104,6 +104,16 @@
     - apps
     - tomcat
 
+- name: template index.html
+  template:
+    src: index.html.j2
+    dest: /opt/resource_hub/templates/base.html
+    mode: '0644'
+
+  tags:
+    - apps
+    - tomcat
+
 - name: start systemd app service
   systemd:
     name: "{{ flask_app_name }}.service"
