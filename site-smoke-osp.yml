@@ -11,7 +11,5 @@
       msg: "{{ webpage.content }}"
 
   roles:
-    - name: osp-instance-delete
-      tags:
-        - osp.smoke
+    - role: osp-instance-delete
       when: "'Ansible has done its job' not in webpage.content"
