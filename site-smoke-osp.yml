@@ -10,7 +10,8 @@
   - debug:
       msg: "{{ webpage.content }}"
 
-  roles:
-    - role: osp-instance-delete
-      fail:
-      when: "'Ansible has done its job' not in webpage.content"
+#  roles:
+  - name: Fail if 'Ansible has done its job' is not in the page content
+#    - role: osp-instance-delete
+    fail:
+    when: "'Ansible has done its job' not in webpage.content"
