@@ -8,7 +8,7 @@
       status_code: 200
     register: webpage
   - debug:
-      msg: "{{ webpage.results }}"
+      msg: "{{ webpage }}"
 
 #  - name: Fail if 'Ansible has done its job' is not in the page content
 #    fail:
