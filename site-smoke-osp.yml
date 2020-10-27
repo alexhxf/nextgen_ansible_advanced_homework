@@ -12,4 +12,5 @@
 
   roles:
     - role: osp-instance-delete
+      fail:
       when: "'Ansible has done its job' not in webpage.content"
