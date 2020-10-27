@@ -3,6 +3,8 @@
   tasks:
   - name: OpenStack servers
   - name: Curl website
+    uri:
+      url: "http://frontend1/ping"
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:

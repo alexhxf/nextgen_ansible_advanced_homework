@@ -1,0 +1,9 @@
+---
+
+- name: Add lb IP address to workstation /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '.*frontend1$'
+    line: "{{ groups.frontends[0] }} frontend1"
+#    line: "{{ hostvars['appdb1']['ansible_default_ipv4']['address'] }} appdb1"
+    state: present
