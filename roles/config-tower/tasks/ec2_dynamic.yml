@@ -7,8 +7,10 @@
   command: |
     tower-cli group create -n "{{ item }}" --inventory "{{ec2_dynamic_inventory}}" 
   loop:
-    - apps 
+    - apps
+    - apps_p
     - appdbs
+    - appdbs_p
     - frontends
     - bastions
     - tag_AnsibleGroup_bastions
@@ -28,9 +30,17 @@
   command: |
     tower-cli group associate --group tag_AnsibleGroup_apps --parent apps --inventory "{{ec2_dynamic_inventory}}"
 
+- name: Associate AWS tags as children to apps_p group
+  command: |
+    tower-cli group associate --group tag_AnsibleGroup_apps --parent apps_p --inventory "{{ec2_dynamic_inventory}}"
+
 - name: Associate AWS tags as children to appdbs group
   command: |
     tower-cli group associate --group tag_AnsibleGroup_appdbs --parent appdbs --inventory "{{ec2_dynamic_inventory}}"
+
+- name: Associate AWS tags as children to appdbs_p group
+  command: |
+    tower-cli group associate --group tag_AnsibleGroup_appdbs --parent appdbs_p --inventory "{{ec2_dynamic_inventory}}"
 
 - name: Add localhost as host 
   command: |
